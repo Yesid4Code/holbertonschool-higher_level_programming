@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def fuzzbuzz():
+def fizzbuzz():
     for x in range(1, 101):
         out = ""
         if (x % 3) == 0:
