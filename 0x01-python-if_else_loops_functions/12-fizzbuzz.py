@@ -6,8 +6,6 @@ def fuzzbuzz():
             out += "Fizz"
         if (x % 5) == 0:
             out += "Buzz"
-
         if out == "":
             out = x
         print(out, end=" ")
-    print("")
