@@ -1,6 +1,5 @@
-# Data Structures: Set, Dictoriry
+# Data Structures: Set, Dictionary.
 
-0x04. Python - More Data Structures: Set, Dictionary
 The objective of this project is learn about:
 - What are set and how to use them
 - What are the most common methods of set and how to use them
