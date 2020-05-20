@@ -7,10 +7,7 @@ class Square:
         def __init__(self, size=0, position=(0, 0)):
                 """ Initialization of the class """
                 self.__size = size
-                try:
-                        self.__position = position
-                except TypeError as error:
-                        print(error)
+                self.__size = position
 
         def area(self):
                 """ Calculate the square's area """
