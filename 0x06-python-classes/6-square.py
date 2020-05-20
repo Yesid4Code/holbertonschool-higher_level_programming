@@ -6,13 +6,8 @@ class Square:
         """ Initialization of the class """
         def __init__(self, size=0, position=(0, 0)):
                 """ Initialization of the class """
-                self.__size = size
-                if type(position) is not tuple or len(position) != 2 or \
-                   type(position[0]) is not int or position[0] < 0 or\
-                   type(position[1]) is not int or position[1] < 0:
-                        raise TypeError("position must be\
-                        a tuple of 2 positive integers")
-                self.__position = position
+                self.size = size
+                self.position = position
 
         def area(self):
                 """ Calculate the square's area """
