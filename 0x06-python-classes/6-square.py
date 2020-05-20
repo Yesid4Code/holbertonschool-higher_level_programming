@@ -36,8 +36,8 @@ class Square:
         def position(self, valuep):
                 """ Set the position to print """
                 if type(valuep) is not tuple or len(valuep) != 2 or \
-                   type(valuep[0]) is not int or type(valuep[0]) < 0 or\
-                   type(valuep[1]) is not int or type(valuep[1]) < 0:
+                   type(valuep[0]) is not int or valuep[0] < 0 or\
+                   type(valuep[1]) is not int or valuep[1] < 0:
                         raise TypeError("position must be a tuple of 2 positive integers")
                 else:
                         self.__position = valuep
