@@ -7,7 +7,10 @@ class Square:
         def __init__(self, size=0, position=(0, 0)):
                 """ Initialization of the class """
                 self.__size = size
-                self.__position = position
+                try:
+                        self.__position = position
+                except TypeError as error:
+                        print(error)
 
         def area(self):
                 """ Calculate the square's area """
@@ -34,12 +37,17 @@ class Square:
 
         @position.setter
         def position(self, value):
-                """ Set the position to print """
-                if type(value) is not tuple or len(value) != 2 or \
-                   type(value[0]) is not int or value[0] < 0 or \
-                   type(value[1]) is not int or value[1] < 0:
-                        raise TypeError("position must be a \
-                            tuple of 2 positive integers")
+                """setter of __position
+                Args:
+                value (tuple): position of the square in 2D space
+                Returns:
+                None
+                """
+                if type(value) != tuple or len(value) != 2 or \
+                   type(value[0]) != int or value[0] < 0 or \
+                   type(value[1]) != int or value[1] < 0:
+                        raise TypeError("position must be a\
+                        tuple of 2 positive integers")
                 else:
                         self.__position = value
 
