@@ -1,0 +1,14 @@
+===============================
+ The "2-matirx-divided" module
+===============================
+Using "matrix_divided" function
+-------------------------------
+matrix = [[1, 2, 3], [4, 5, 6]] matrix used
+Import "matrix_divided" from 2-matrix-divided
+       >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+
+Normal cases:
+       >>> matrix = [[], []]
+       >>> matrix_divided(matrix, 3)
+       [[], []] <--- EVALUATE

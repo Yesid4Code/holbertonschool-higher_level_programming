@@ -1,0 +1,52 @@
+===============================
+ The "3-say_my_name" module
+===============================
+Using "say_my_name" function
+-------------------------------
+matrix = [[1, 2, 3], [4, 5, 6]] matrix used
+Import "say_my_name" from 3-say_my_name
+       >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Normal cases:
+Shoul return complete name:
+      >>> say_my_name("Holberton", "School")
+      My name is Holberton School
+
+
+One argument case:
+Should return the name with a end space:
+       >>> say_my_name("School")
+       My name is School 
+
+       >>> say_my_name("")
+       My name is  
+
+Should return an error if one argument has a wrong type:
+       >>> say_my_name("Holberton", None)
+       Traceback (most recent call last):
+       TypeError: last_name must be a string
+
+       >>> say_my_name("Holberton", 4)
+       Traceback (most recent call last):
+       TypeError: last_name must be a string
+
+       >>> say_my_name(None, "School")
+       Traceback (most recent call last):
+       TypeError: first_name must be a string
+
+       >>> say_my_name(None)
+       Traceback (most recent call last):
+       TypeError: first_name must be a string
+
+Cero argument case:
+Should return an error if nothing is sent:
+       >>> say_my_name()
+       Traceback (most recent call last):
+       TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+More than 2 arguments:
+Should return an error if more than 3 arguments are sent:
+       >>> say_my_name("Holberton", "School", "Extra")
+       Traceback (most recent call last):
+       TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
