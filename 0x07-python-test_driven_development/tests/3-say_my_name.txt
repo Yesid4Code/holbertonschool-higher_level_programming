@@ -21,7 +21,7 @@ Should return the name with a end space:
        >>> say_my_name("")
        My name is  
 
-Should return an error if one argument has a wrong type:
+Should return an error if one/two argument(s) has(have) a wrong type:
        >>> say_my_name("Holberton", None)
        Traceback (most recent call last):
        TypeError: last_name must be a string
@@ -35,6 +35,10 @@ Should return an error if one argument has a wrong type:
        TypeError: first_name must be a string
 
        >>> say_my_name(None)
+       Traceback (most recent call last):
+       TypeError: first_name must be a string
+
+       >>> say_my_name(3, 4)
        Traceback (most recent call last):
        TypeError: first_name must be a string
 
