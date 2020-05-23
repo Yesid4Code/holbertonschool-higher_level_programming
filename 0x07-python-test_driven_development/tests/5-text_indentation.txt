@@ -1,0 +1,57 @@
+================================
+ The "5-text_identation" module
+================================
+Using "text_identation" function
+--------------------------------
+function that prints a text with 2 new lines
+After each of these characters: ., ? and :
+
+Operations
+==========
+text must be strings
+
+Import "text_identation" from "5-text_identation"
+       >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+
+Normal cases:
+
+No Arguments:
+       >>> text_indentation()
+       Traceback (most recent call last):
+       TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Int argument:
+       >>> text_indentation(5)
+       Traceback (most recent call last):
+       TypeError: text must be a string
+
+None argument:
+       >>> text_indentation(None)
+       Traceback (most recent call last):
+       TypeError: text must be a string
+
+String without special characters:
+       >>> text_indentation("Hola Laura")
+       Hola Laura
+
+String with only special characters and spaces:
+       >>> text_indentation("   ?   :   .   ")
+       ?
+       <BLANKLINE>
+       :
+       <BLANKLINE>
+       .
+       <BLANKLINE>
+
+String with only special characters and no spaces:
+       >>> text_indentation("?:.")
+       ?
+       <BLANKLINE>
+       :
+       <BLANKLINE>
+       .
+       <BLANKLINE>
+
+Empty string:
+       >>> text_indentation("")
