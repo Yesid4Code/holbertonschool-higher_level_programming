@@ -104,6 +104,11 @@ Should return an error:
        TypeError: a must be and integer an integer
 
 Should return an error:
+       >>> add_integer(2, "b")
+       Traceback (most recent call last):
+       TypeError: b must be and integer an integer
+
+Should return an error:
        >>> add_integer(b, 2)
        Traceback (most recent call last):
        NameError: name 'b' is not defined
