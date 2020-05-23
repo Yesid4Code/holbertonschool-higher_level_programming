@@ -80,7 +80,7 @@ Should return an error:
        TypeError: a must be and integer an integer
 
 Should return an error:
-       >>> add_integer(float('nan'))
+       >>> add_integer(float('nan'), 3)
        Traceback (most recent call last):
        ValueError: cannot convert float NaN to integer
 
