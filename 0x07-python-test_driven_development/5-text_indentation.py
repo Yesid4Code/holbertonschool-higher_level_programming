@@ -20,7 +20,6 @@ def text_indentation(text):
     special_ch = [':', '.', '?']
     flag = True
 
-
     for c in text:
         if c == " " and flag is True:
             continue

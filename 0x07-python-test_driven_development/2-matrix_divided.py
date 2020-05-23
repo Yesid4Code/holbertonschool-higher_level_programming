@@ -30,7 +30,8 @@ def matrix_divided(matrix, div):
                             raise TypeError(sizeerror)
                     else:
                         raise TypeError(tyerror)
-                return([[round(i/div, 2) for i in row] for row in new_matrix[:]])
+                return([[
+                    round(i/div, 2) for i in row] for row in new_matrix[:]])
             else:
                 raise TypeError(tyerror)
         else:

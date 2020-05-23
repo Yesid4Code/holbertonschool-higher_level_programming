@@ -2,6 +2,8 @@
 '''
     xx
 '''
+
+
 def say_my_name(first_name, last_name=""):
     if type(first_name) is str:
         if type(last_name) is str:
