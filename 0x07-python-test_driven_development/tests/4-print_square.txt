@@ -1,0 +1,76 @@
+===============================
+ The "4-print_square" module
+===============================
+Using "print_square" function
+-------------------------------
+
+Import "print_square" from 4-print_square
+       >>> print_square = __import__("4-print_square").print_square
+
+Normal cases:
+Should return a square of #:
+       >>> print_square(4)
+       ####
+       ####
+       ####
+       ####
+
+       >>> print_square(10)
+       ##########
+       ##########
+       ##########
+       ##########
+       ##########
+       ##########
+       ##########
+       ##########
+       ##########
+       ##########
+
+       >>> print_square(0)
+
+       >>> print_square(1)
+       #
+
+Invalid number cases:
+Shoul return an error if negative number is sent:
+      >>> print_square(-1)
+      Traceback (most recent call last):
+      ValueError: size must be >= 0
+
+Shoul return an error if infinitive number is sent:
+      >>> print_square(float('inf'))
+      Traceback (most recent call last):
+      TypeError: size must be an integer
+
+Should return an error if a float number is sent:
+       >>> print_square(1.1)
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+
+Should return an error if a float number is sent:
+       >>> print_square(-1.1)
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+
+Should return erro if a imaginary number is sent:
+       >>> print_square(2j)
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+
+Cero argument case:
+Should return an error:
+       >>> print_square()
+       Traceback (most recent call last):
+       TypeError: print_square() missing 1 required positional argument: 'size'
+
+Should return an error:
+       >>> print_square(None)
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+
+No number case:
+Should return an error if no number type is sent:
+       >>> print_square("a")
+       Traceback (most recent call last):
+       TypeError: size must be an integer
