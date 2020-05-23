@@ -26,6 +26,3 @@ class TestMaxInteger(unittest.TestCase):
     def test_with_errors(self):
         self.assertRaises(TypeError, max_integer, [5j, 3j])
         self.assertRaises(TypeError, max_integer, 25)
-
-if __name__ == '__main__':
-    unittest.main()
