@@ -22,22 +22,11 @@ Normal cases:
        >>> list.print_sorted()
        []
 
-       >>> list = Mylist(range(5))
+       >>> list = MyList(range(5))
        >>> list.print_sorted()
        [0, 1, 2, 3, 4]
 
        >>> list = MyList()
        >>> list.append(-2)
        >>> list.print_sorted()
-       
-       >>> list = MyList()
-       >>> list.append(None)
-       Traceback (most recent call last):
-       ...
-       TypeError: unorderable types: NoneType() < str()
-
-       >>> list = MyList()
-       >>> 
-       >>> list = MyList()
-
-       >>> list = MyList()
+       [-2]
