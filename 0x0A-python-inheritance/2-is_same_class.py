@@ -1,0 +1,17 @@
+#!/usr/bin/pyton3
+""" Function to check the class of an instance  """
+
+
+def is_same_class(obj, a_class):
+    """
+    Args:
+        obj: object to verify.
+        a_class: class to verify.
+    Return:
+        True: if the object is an instance of a class.
+        Fasle: otherwise.
+    """
+    if isinstance(obj, a_class):
+        return True
+    else:
+        return False
