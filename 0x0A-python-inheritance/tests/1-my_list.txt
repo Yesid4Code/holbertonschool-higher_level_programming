@@ -11,7 +11,7 @@ Import from the module:
        >>> list = MyList()
 
 Normal cases:
-
+       >>> list = MyList()
        >>> list.append(9)
        >>> list.append(3)
        >>> list.append(8)
@@ -22,12 +22,14 @@ Normal cases:
        >>> list.print_sorted()
        []
 
+       >>> list = Mylist(range(5))
+       >>> list.print_sorted()
+       [0, 1, 2, 3, 4]
+
        >>> list = MyList()
        >>> list.append(-2)
-       >>> list.append(2.5)
-       >>> list.append(8)
        >>> list.print_sorted()
-
+       
        >>> list = MyList()
        >>> list.append(None)
        Traceback (most recent call last):
