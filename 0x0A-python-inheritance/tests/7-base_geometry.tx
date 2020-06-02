@@ -1,0 +1,41 @@
+======================
+The "1-my_list" module
+======================
+from Class: Mylist
+======================
+Using "print_sorted"
+======================
+
+Import from the module:
+       >>> MyList = __import__("1-my_list").MyList
+       >>> list = MyList()
+
+Normal cases:
+
+       >>> list.append(9)
+       >>> list.append(3)
+       >>> list.append(8)
+       >>> list.print_sorted()
+       [3, 8, 9]
+
+       >>> list = MyList()
+       >>> list.print_sorted()
+       []
+
+       >>> list = MyList()
+       >>> list.append(-2)
+       >>> list.append(2.5)
+       >>> list.append(8)
+       >>> list.print_sorted()
+
+       >>> list = MyList()
+       >>> list.append(None)
+       Traceback (most recent call last):
+       ...
+       TypeError: unorderable types: NoneType() < str()
+
+       >>> list = MyList()
+       >>> 
+       >>> list = MyList()
+
+       >>> list = MyList()
