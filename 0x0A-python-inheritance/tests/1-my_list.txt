@@ -15,16 +15,22 @@ Normal cases:
        >>> list.append(9)
        >>> list.append(3)
        >>> list.append(8)
+       >>> print(list)
+       [9, 3, 8]
        >>> list.print_sorted()
        [3, 8, 9]
 
        >>> list = MyList()
        >>> list.append(2)
        >>> list.append(1)
+       >>> print(list)
+       [2, 1]
        >>> list.print_sorted()
        [1, 2]
 
        >>> list = MyList()
+       >>> print(list)
+       []
        >>> list.print_sorted()
        []
 
@@ -66,9 +72,3 @@ Normal cases:
        >>> list.print_sorted() == list
        ['4', 'C', 'Y', 'd', 'd', 'e', 'e', 'i', 'o', 's']
        False
-
-       >>> list = MyList()
-       >>> print()
-       <BLANKLINE>
-       >>> list.print_sorted()
-       []
