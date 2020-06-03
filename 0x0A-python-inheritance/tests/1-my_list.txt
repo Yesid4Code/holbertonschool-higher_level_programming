@@ -15,8 +15,6 @@ Normal cases:
        >>> list.append(9)
        >>> list.append(3)
        >>> list.append(8)
-       >>> print(list)
-       [9, 3, 8]
        >>> list.print_sorted()
        [3, 8, 9]
 
