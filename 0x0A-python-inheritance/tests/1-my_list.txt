@@ -66,3 +66,9 @@ Normal cases:
        >>> list.print_sorted() == list
        ['4', 'C', 'Y', 'd', 'd', 'e', 'e', 'i', 'o', 's']
        False
+
+       >>> list = MyList()
+       >>> print()
+       <BLANKLINE>
+       >>> list.print_sorted()
+       []
