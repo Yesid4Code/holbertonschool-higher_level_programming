@@ -48,7 +48,5 @@ Normal cases:
        TypeError: 'NoneType' object is not iterable
 
        >>> list = MyList("Yesid4Code")
-       >>> print(list)
-       ['Y', 'e', 's', 'i', 'd', '4', 'C', 'o', 'd', 'e']
        >>> list.print_sorted()
        ['4', 'C', 'Y', 'd', 'd', 'e', 'e', 'i', 'o', 's']
