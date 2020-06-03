@@ -25,8 +25,9 @@ Normal cases:
        >>> list.append(1)
        >>> print(list)
        [2, 1]
-       >>> list.print_sorted()
+       >>> list.print_sorted() == list
        [1, 2]
+       False
 
        >>> list = MyList()
        >>> print(list)
