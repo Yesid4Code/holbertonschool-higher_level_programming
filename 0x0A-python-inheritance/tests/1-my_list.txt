@@ -55,14 +55,6 @@ Normal cases:
        >>> list.print_sorted()
        [-2, 8]
 
-       >>> list = MyList()
-       >>> list.append(8.3)
-       >>> list.append(3)
-       >>> print(list)
-       [8.3, 3]
-       >>> list.print_sorted()
-       [3, 8.3]
-
        >>> list = MyList(8.2)
        Traceback (most recent call last):
        ...
