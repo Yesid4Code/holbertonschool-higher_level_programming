@@ -20,6 +20,8 @@ Normal cases:
        >>> list.print_sorted()
        [3, 8, 9]
 
+       >>> print(list)
+       [9, 3, 8]
        >>> list = MyList()
        >>> list.append(2)
        >>> list.append(1)
