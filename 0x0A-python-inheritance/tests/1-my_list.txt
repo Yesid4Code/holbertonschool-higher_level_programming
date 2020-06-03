@@ -21,8 +21,6 @@ Normal cases:
        >>> list = MyList()
        >>> list.append(2)
        >>> list.append(1)
-       >>> print(list)
-       [2, 1]
        >>> list.print_sorted()
        [1, 2]
 
@@ -64,3 +62,7 @@ Normal cases:
        ['Y', 'e', 's', 'i', 'd', '4', 'C', 'o', 'd', 'e']
        >>> list.print_sorted()
        ['4', 'C', 'Y', 'd', 'd', 'e', 'e', 'i', 'o', 's']
+
+       >>> list.print_sorted() == list
+       ['4', 'C', 'Y', 'd', 'd', 'e', 'e', 'i', 'o', 's']
+       False
