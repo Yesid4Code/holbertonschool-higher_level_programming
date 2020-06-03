@@ -26,6 +26,10 @@ Normal cases:
        >>> list.print_sorted()
        [0, 1, 2, 3, 4]
 
+       >>> list = MyList([1, 2, 3, 4])
+       >>> list.print_sorted()
+       [1, 2, 3, 4]
+
        >>> list = MyList()
        >>> list.append(-2)
        >>> list.print_sorted()
