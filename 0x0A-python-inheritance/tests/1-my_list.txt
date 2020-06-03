@@ -55,16 +55,6 @@ Normal cases:
        >>> list.print_sorted()
        [-2, 8]
 
-       >>> list = MyList(8.2)
-       Traceback (most recent call last):
-       ...
-       TypeError: 'float' object is not iterable
-
-       >>> list = MyList(None)
-       Traceback (most recent call last):
-       ...
-       TypeError: 'NoneType' object is not iterable
-
        >>> list = MyList("Yesid4Code")
        >>> print(list)
        ['Y', 'e', 's', 'i', 'd', '4', 'C', 'o', 'd', 'e']
