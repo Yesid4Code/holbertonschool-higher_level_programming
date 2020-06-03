@@ -77,7 +77,3 @@ Normal cases:
        ['Y', 'e', 's', 'i', 'd', '4', 'C', 'o', 'd', 'e']
        >>> list.print_sorted()
        ['4', 'C', 'Y', 'd', 'd', 'e', 'e', 'i', 'o', 's']
-
-       >>> list.print_sorted() == list
-       ['4', 'C', 'Y', 'd', 'd', 'e', 'e', 'i', 'o', 's']
-       False
