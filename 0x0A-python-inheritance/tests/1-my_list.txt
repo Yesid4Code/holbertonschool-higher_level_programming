@@ -19,6 +19,14 @@ Normal cases:
        [3, 8, 9]
 
        >>> list = MyList()
+       >>> list.append(2)
+       >>> list.append(1)
+       >>> print(list)
+       [2, 1]
+       >>> list.print_sorted()
+       [1, 2]
+
+       >>> list = MyList()
        >>> list.print_sorted()
        []
 
