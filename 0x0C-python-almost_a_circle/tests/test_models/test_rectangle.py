@@ -19,27 +19,25 @@ class TestRectangle(unittest.TestCase):
     """
     def SetUp(self):
         """ Method to set the start point """
-        Base._Base__nb_objects = 0
+        self.R1 = Rectangle(10, 11)
+        r2 = Rectangle(11, 12, 13)
+        r3 = Rectangle(12, 13, 14, 15)
+        r6 = Rectangle(13, 14, 15, 16, 5)
+        r4 = Rectangle(2, 4, 5, 6, 7)
+        self.r5 = Rectangle(3, 45, 4, 2, id="10")
 
     def test_0_id(self):
         """ Tests for id. """
-        Base._Base__nb_objects = 0
-        R1 = Rectangle(10, 11)
-        R2 = Rectangle(11, 12, 13)
-        R3 = Rectangle(12, 13, 14, 15)
-        R6 = Rectangle(13, 14, 15, 16, 5)
-        R4 = Rectangle(2, 4, 5, 6, 7)
-        R5 = Rectangle(3, 45, 4, 2, id="10")
-        self.assertEqual(R1.id, 1)
-        self.assertEqual(R2.id, 2)
-        self.assertEqual(R3.id, 3)
-        self.assertEqual(R6.id, 5)
-        self.assertEqual(R4.id, 7)
-        self.assertEqual(R5.id, "10")
+#        self.assertEqual(self.R1.id, 1)
+#        self.assertEqual(r2.id, 2)
+#        self.assertEqual(r3.id, 3)
+#        self.assertEqual(r6.id, 5)
+#        self.assertEqual(r4.id, 7)
+
+        self.assertEqual(self.r5.id, "10")
 
     def test_1_id(self):
         """ Tests for checking numbers of objects. """
-        Base._Base__nb_objects = 0
         with self.assertRaises(TypeError):
             Rectangle(10)
             Rectangle()
