@@ -18,7 +18,7 @@ class TestBase(unittest.TestCase):
     """
     def SetUp(self):
         """ Method to set the start point """
-        Base.Base__no_objects = 0
+        Base.Base__nb_objects = 0
 
     def test_0_id(self):
         """
