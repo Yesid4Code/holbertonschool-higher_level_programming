@@ -27,7 +27,7 @@ class TestRectangle(unittest.TestCase):
         r6 = Rectangle(13, 14, 15, 16, 5)
         r4 = Rectangle(2, 4, 5, 6, 7)
         # self.R5 = Rectangle(3, 45, 4, 2, id="10")
-        self.R5 = Rectangle(3, 45, 4, 2, 10)
+        self.rectangle = Rectangle(3, 45, 4, 2, 10)
 
     def test_0_id(self):
         """ Tests for id. """
@@ -38,7 +38,7 @@ class TestRectangle(unittest.TestCase):
 #        self.assertEqual(r6.id, 5)
 #        self.assertEqual(r4.id, 7)
 
-        self.assertEqual(self.R5.id, 10)
+        self.assertEqual(self.rectangle.id, 10)
 """
     def test_1_id(self):
         "" Tests for checking numbers of objects. ""
