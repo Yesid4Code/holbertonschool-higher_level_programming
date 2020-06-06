@@ -95,15 +95,6 @@ class Rectangle(Base):
     def update(self, *args):
         """ . """
         if args:
+            atribute = ["id", "width", "height", "x", "y"]
             for idx, value in enumerate(args):
-                if idx == 0:
-                    self.id = value
-                if idx == 1:
-                    self.width = value
-                if idx == 2:
-                    self.width = value
-                if idx == 3:
-                    self.x = value
-                if idx == 4:
-                    self.y = value
-
+                setattr(self, atribute[idx], value)
