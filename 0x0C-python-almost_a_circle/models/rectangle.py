@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the "Rectangle" class
+Class Rectangle which inherits from base.
 """
 
 
@@ -97,7 +97,13 @@ class Rectangle(Base):
         if args:
             atribute = ["id", "width", "height", "x", "y"]
             for idx, value in enumerate(args):
-                setattr(self, atribute[idx], value)
+                if idx < 5:
+                    setattr(self, atribute[idx], value)
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Dictionary representation of a Rectangle """
+        dic = ["id", "height", "width", "x", "y"]
+        return {key: getattr(self, key) for key in dic}

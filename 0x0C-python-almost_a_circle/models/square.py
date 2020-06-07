@@ -32,6 +32,18 @@ class Square(Rectangle):
         self.width = base
         self.height = base
 
+    def update(self, *args, **kwargs):
+        """ Updates multiple attributes. """
+        if args:
+            atribute = ["id", "size", "x", "y"]
+            for idx, value in enumerate(args):
+                if idx < 5:
+                    setattr(self, atribute[idx], value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
 # Tests comands
 # python3 -m unittest discover tests
 # python3 -m unittest tests/test_models/test_base.py
