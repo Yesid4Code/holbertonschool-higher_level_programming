@@ -93,7 +93,7 @@ class Rectangle(Base):
                                                                  self.__height)
 
     def update(self, *args):
-        """ . """
+        """ Updates multiple attributes. """
         if args:
             atribute = ["id", "width", "height", "x", "y"]
             for idx, value in enumerate(args):
