@@ -14,27 +14,26 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """
-    Check:
-      Test to check the documentation and style of Base class on TestBaseDocs.
-    Class contining functions to run
-    multiple tests
-    Test the functionality of the Rectangle class.
+    Class containing functions to test:
+        * Functionality of the Rectangle class.
+        * Style of the Rectangle class.
+        * Documentation of the Rectangle class.
     """
     def setUp(self):
-        """ Method to set the start point """
+        """ Method to set the start point. """
         # Rectangle("width", "height", "x", "y", "id")
         self.r0 = Rectangle(8, 12, 2, 1, 12)
         self.r1 = Rectangle(10, 11)
-        self.r2 = Rectangle(11, 12, 13)
-        self.r3 = Rectangle(12, 13, 14, 15)
-        self.r4 = Rectangle(13, 14, 15, 16, 13)
-        self.r5 = Rectangle(2, 4, 5, 6, 7)
-        self.r6 = Rectangle(3, 45, 4, 2, 14)
-        self.r7 = Rectangle(2, 4, 0, 0)
+        self.r2 = Rectangle(12, 13, 14, 15)
+        self.r3 = Rectangle(6, 5, 2, 3, 13)
+        self.r4 = Rectangle(2, 4, 0, 0)
+        # Redirect output to verify output of print dependent functions
         sys.stdout = StringIO()
 
     def tearDown(self):
-        """ Method to redirect stdout to check the display function. """
+        """
+        Method to cleans everything up after running setup.
+        """
         sys.stdout = sys.__stdout__
 
     def test_00_id(self):
@@ -43,27 +42,33 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r1.id, 1)
         self.assertEqual(self.r2.id, 2)
 
-    def test_05_display_0(self):  # task 5 y 7
-        """ Tests for checking numbers of objects. """
+    def test_04_area(self):
+        """ Test the area method. """
+        self.assertEqual(self.r0.area(), 96)
+    def test_05_display_0(self):
+        """
+        Test display method without x and y
+        """
         r1O = "##\n" \
               "##\n" \
               "##\n" \
               "##\n"
-        self.r7.display()
+        self.r4.display()
         self.assertEqual(sys.stdout.getvalue(), r1O)
 
     def test_06_str(self):
-        """ Test the __str__ method. """
+        """ Test that __str__ method produces correct output. """
         self.assertEqual(self.r0.__str__(), "[Rectangle] (12) 2/1 - 8/12")
-        self.assertEqual(self.r1.__str__(), "[Rectangle] (9) 0/0 - 10/11")
+        self.assertEqual(self.r1.__str__(), "[Rectangle] (10) 0/0 - 10/11")
     """
     def test_07_display_1(self):
-        "" Tests for checking numbers of objects. ""
+        ""
+        Test display method with 'x' and 'y' position. ""
         r1O = "##\n" \
               "##\n" \
               "##\n" \
               "##\n"
-        self.r7.display()
+        self.r3.display()
         self.assertEqual(sys.stdout.getvalue(), r1O)
     """
 
