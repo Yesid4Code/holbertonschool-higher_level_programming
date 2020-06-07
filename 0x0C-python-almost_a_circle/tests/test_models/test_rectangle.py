@@ -73,7 +73,20 @@ class TestRectangle(unittest.TestCase):
     """
 
     def test_08_update(self):
-        """ . """
+        """ Tests that the update method uses setter with *args. """
+        self.r2.update(9, 3, 2, 0)
+        self.assertEqual(self.r2.__str__(), "[Rectangle] (9) 0/15 - 3/2")
+
+    def test_09_update(self):
+        """ Tests that the update method uses setter with **kwargs. """
+        self.r0.update(x=1, height=2)
+        self.r1.update(width=4, x=3, id=14, y=1)
+        self.assertEqual(self.r0.__str__(), "[Rectangle] (12) 1/1 - 8/2")
+        self.assertEqual(self.r1.__str__(), "[Rectangle] (14) 3/1 - 4/11")
 
 if __name__ == "__main__":
     unittest.main()
+
+# Tests comands
+# python3 -m unittest discover tests
+# python3 -m unittest tests/test_models/test_base.py
