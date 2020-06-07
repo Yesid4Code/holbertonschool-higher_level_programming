@@ -43,7 +43,7 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-
-# Tests comands
-# python3 -m unittest discover tests
-# python3 -m unittest tests/test_models/test_base.py
+    def to_dictionary(self):  # Task  14
+        """ Dictionary representation of a Square. """
+        dic = ["id", "size", "x", "y"]
+        return {key: getattr(self, key) for key in dic}
