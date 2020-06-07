@@ -16,10 +16,21 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Informal string representation of the Square. """
-        return "[Square] ([:d}) {:d}/{:d} - {:d}".format(self.id,
-                                                              self.__x,
-                                                              self.__y,
-                                                              self.__size)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                         self.x,
+                                                         self.y,
+                                                         self.size)
+
+    @property
+    def size(self):
+        """ Getter for size. """
+        return self.width
+
+    @size.setter
+    def size(self, base):
+        """ Setter for size. """
+        self.width = base
+        self.height = base
 
 # Tests comands
 # python3 -m unittest discover tests
