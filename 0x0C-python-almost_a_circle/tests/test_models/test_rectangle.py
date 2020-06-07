@@ -27,11 +27,11 @@ class TestRectangle(unittest.TestCase):
         self.r1 = Rectangle(10, 11)
         self.r2 = Rectangle(11, 12, 13)
         self.r3 = Rectangle(12, 13, 14, 15)
-        self.r4 = Rectangle(13, 14, 15, 16, 5)
+        self.r4 = Rectangle(13, 14, 15, 16, 13)
         self.r5 = Rectangle(2, 4, 5, 6, 7)
-        self.r6 = Rectangle(3, 45, 4, 2, 10)
-        self.r7 = Rectangle(6, 2, 4, 0, 0)
-        sys.stdout = StringIO
+        self.r6 = Rectangle(3, 45, 4, 2, 14)
+        self.r7 = Rectangle(2, 4, 0, 0)
+        sys.stdout = StringIO()
 
     def tearDown(self):
         """ Method to redirect stdout to check the display function. """
@@ -55,7 +55,7 @@ class TestRectangle(unittest.TestCase):
     def test_06_str(self):
         """ Test the __str__ method. """
         self.assertEqual(self.r0.__str__(), "[Rectangle] (12) 2/1 - 8/12")
-        self.assertEqual(self.r1.__str__(), "[Rectangle] (7) 0/0 - 10/11")
+        self.assertEqual(self.r1.__str__(), "[Rectangle] (9) 0/0 - 10/11")
     """
     def test_07_display_1(self):
         "" Tests for checking numbers of objects. ""
