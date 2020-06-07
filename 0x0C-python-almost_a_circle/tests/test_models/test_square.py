@@ -50,13 +50,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.r0.__str__(), "[Square] (2) 12/2 - 8")
         self.assertEqual(self.r3.__str__(), "[Square] (3) 2/20 - 2")
 
-    def test_13_to_dictionary(self):
+    def test_14_to_dictionary(self):
         """ Test regular to_dictionary """
         d1 = self.r0.to_dictionary()
-        self.assertEqual({"id": 20, "width": 8, "height": 8, "x": 12, "y": 2},
-                         d1)
+        self.assertEqual({"id": 20, "size": 8, "x": 12, "y": 2}, d1)
         self.assertTrue(type(d1) is dict)
-
+8,12,2,1,12
 
 # Tests comands
 # python3 -m unittest discover tests

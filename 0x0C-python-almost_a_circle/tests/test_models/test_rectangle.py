@@ -84,6 +84,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r0.__str__(), "[Rectangle] (12) 1/1 - 8/2")
         self.assertEqual(self.r1.__str__(), "[Rectangle] (14) 3/1 - 4/11")
 
+    def test_13_to_dictionary(self):
+        """ Test regular to_dictionary """
+        d1 = self.r0.to_dictionary()
+        self.assertEqual({"id": 12, "width": 8, "height": 12, "x": 2, "y": 1},
+                         d1)
+        self.assertTrue(type(d1) is dict)
+
 if __name__ == "__main__":
     unittest.main()
 
