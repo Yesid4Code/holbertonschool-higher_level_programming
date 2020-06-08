@@ -55,3 +55,34 @@ class Base:
             dummy = cls(2)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ Method to return a list of instances. """
+        listt = []
+        try:
+            with open("{}.json".format(cls.__name__)) as fil:
+                dic = cls.from_json_string(fil.read())
+                for item in dic:
+                    listt.append(cls.create(**item))
+                return listt
+        except:
+            return listt
+
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes in CSV a list of Rectangles/Squares in Python. """
+        with open(cls.__name__ + ".csv", "w") as fil:
+            fil_csv = csv.writer(fil)
+            if cls.__name__ is "Rectangle":
+                for obj in list_objs:
+                    fil_csv.writerow([obj.id,
+                                      obj.width, obj.height,
+                                      obj.x, obj.y])
+            elif cls.__name__ is "Square":
+                for obj in list_objs:
+                    fil_csv.writerow([obj.id, obj.size, obj.x, obj.y])
+            fil_csv.writerows(list_objs)
+
+    def load_from_file_cvs(cls):
+        """ Deserializes in Python a lsit of Rectangles/Squares in CSV. """
+        with
