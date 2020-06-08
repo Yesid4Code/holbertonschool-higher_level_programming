@@ -5,16 +5,18 @@
 
 
 import unittest
+import json
 from models.base import Base
+from models.rectangle import Rectangle
 # here should be more imports like inspect, pep8, json, base,
 
 
 class TestBase(unittest.TestCase):
     """
-    Check:
-      Test to check the documentation and style of Base class on TestBaseDocs.
-    Class contining functions to run
-    multiple tests
+    Class containing functions to test on the Bass class:
+        * Functionality.
+        * Style.
+        * Documentation.
     """
     def SetUp(self):
         """ Method to set the start point """
@@ -37,6 +39,19 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b5.id, 4)
         self.assertEqual(b6.id, "text")
 
+    def test_15_to_json_string(self):  # Task 15
+        """ Test method to_json_string. """
+        d0 = {"id": 9, "width": 5, "height": 6, "x": 7, "y": 8}
+        d1 = {"id": 9, "width": 5, "height": 6, "x": 7, "y": 8}
+        d2 = {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0}
+        j_dic = Base.to_json_string([d0, d2])
+        p_dic = json.loads(j_dic)
+        self.assertEqual(p_dic, [d0, d2])
 
-    if __name__ == '__main__':
+
+if __name__ == '__main__':
         unittest.main()
+
+# Test
+# python3 -m unittest discover tests
+# python3 -m unittest tests/test_models/test_base.py
