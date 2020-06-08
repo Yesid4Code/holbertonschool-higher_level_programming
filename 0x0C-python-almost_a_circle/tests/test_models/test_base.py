@@ -42,11 +42,17 @@ class TestBase(unittest.TestCase):
     def test_15_to_json_string(self):  # Task 15
         """ Test method to_json_string. """
         d0 = {"id": 9, "width": 5, "height": 6, "x": 7, "y": 8}
-        d1 = {"id": 9, "width": 5, "height": 6, "x": 7, "y": 8}
-        d2 = {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0}
+        d1 = {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0}
+        r8 = Rectangle(9, 8, 8, 4)
+        d2 = r8.to_dictionary()
+        j_dic = Base.to_json_string([d0, d1])
+        p_dic = json.loads(j_dic)
+        self.assertEqual(p_dic, [d0, d1])
         j_dic = Base.to_json_string([d0, d2])
         p_dic = json.loads(j_dic)
         self.assertEqual(p_dic, [d0, d2])
+        j_dic = Base.to_json_string(None)
+        self.assertEqual(j_dic, "[]")
 
 
 if __name__ == '__main__':

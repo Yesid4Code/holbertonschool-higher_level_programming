@@ -39,8 +39,8 @@ class TestRectangle(unittest.TestCase):
     def test_00_id(self):
         """ Tests for id. """
         self.assertEqual(self.r0.id, 12)
-        self.assertEqual(self.r1.id, 1)
-        self.assertEqual(self.r2.id, 2)
+        self.assertEqual(self.r1.id, 5)
+        self.assertEqual(self.r2.id, 6)
 
     def test_04_area(self):
         """ Test the area method. """
@@ -59,7 +59,7 @@ class TestRectangle(unittest.TestCase):
     def test_06_str(self):
         """ Test that __str__ method produces correct output. """
         self.assertEqual(self.r0.__str__(), "[Rectangle] (12) 2/1 - 8/12")
-        self.assertEqual(self.r1.__str__(), "[Rectangle] (10) 0/0 - 10/11")
+        self.assertEqual(self.r1.__str__(), "[Rectangle] (14) 0/0 - 10/11")
     """
     def test_07_display_1(self):
         ""
