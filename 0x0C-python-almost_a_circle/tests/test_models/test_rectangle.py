@@ -52,6 +52,7 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         """ Method to set the start point. """
         # Rectangle("width", "height", "x", "y", "id")
+        Base._Base__nb_objects = 0
         self.r0 = Rectangle(8, 12, 2, 1, 12)
         self.r1 = Rectangle(10, 11)
         self.r2 = Rectangle(12, 13, 14, 15)

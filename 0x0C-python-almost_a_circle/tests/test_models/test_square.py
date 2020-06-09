@@ -8,6 +8,7 @@ import unittest
 import pep8
 from models.square import Square
 from models import square
+from models.base import Base
 
 
 class TestSquarePep8(unittest.TestCase):
