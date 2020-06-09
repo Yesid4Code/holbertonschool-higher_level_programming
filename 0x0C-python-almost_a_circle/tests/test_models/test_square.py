@@ -5,8 +5,6 @@ Conteins tests for Square class.
 
 
 import unittest
-import sys
-from io import StringIO
 from models.square import Square
 # here should be more imports.
 
@@ -26,22 +24,14 @@ class TestSquare(unittest.TestCase):
         self.r1 = Square(10, 11)
         self.r2 = Square(12, 13, 14)
         self.r3 = Square(6, 5, 2, 21)
-        # Redirect output to verify output of print dependent functions.
-        sys.stdout = StringIO()
 
-    def tearDown(self):
-        """
-        Method to cleans everything up after running setup.
-        """
-        sys.stdout = sys.__stdout__
-
-    def test_10_square(self):  # Task 10
-        """ . """
-        pass
-
-    def test_11_Get_Setter(self):
-        """ . """
-        pass
+    def test_10_Square(self):  # Task 10
+        """ Instantiation. """
+        self.assertEqual(self.r0.size, 8)
+        self.assertRaises(TypeError, Square, [1, 2], 2, 7)
+        self.assertRaises(TypeError, Square, 2.3, 2, 7)
+        self.assertRaises(TypeError, Square, -8, 2, 7)
+        self.assertRaises(TypeError, Square, {1, 2}, 2, 7)
 
     def test_12_update(self):
         """Tests that the update method uses setter with *args and **kwargs """
@@ -55,7 +45,6 @@ class TestSquare(unittest.TestCase):
         d1 = self.r0.to_dictionary()
         self.assertEqual({"id": 20, "size": 8, "x": 12, "y": 2}, d1)
         self.assertTrue(type(d1) is dict)
-8,12,2,1,12
 
 # Tests comands
 # python3 -m unittest discover tests
