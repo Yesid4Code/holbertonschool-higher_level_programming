@@ -30,7 +30,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.r0.size, 8)
         self.assertRaises(TypeError, Square, [1, 2], 2, 7)
         self.assertRaises(TypeError, Square, 2.3, 2, 7)
-        self.assertRaises(TypeError, Square, -8, 2, 7)
+        self.assertRaises(ValueError, Square, -8, 2, 7)
         self.assertRaises(TypeError, Square, {1, 2}, 2, 7)
 
     def test_12_update(self):
