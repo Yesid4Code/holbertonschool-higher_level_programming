@@ -29,7 +29,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ . """
+        """ Method that save a JSon string representation on a file. """
         with open(cls.__name__ + ".json", "w") as fil:
             if list_objs is None or list_objs == []:
                 fil.write([])
@@ -87,10 +87,10 @@ class Base:
                     list_csv += [dic.writerow(inst.to_dictionary())]
 
     @classmethod
-    def load_from_file_cvs(cls):
+    def load_from_file_csv(cls):
         """ Deserializes in Python a lsit of Rectangles/Squares in CSV. """
         try:
-            with open("{}.csv".format(cls.__name__), "w", newline="") as fil:
+            with open("{}.csv".format(cls.__name__), "r", newline="") as fil:
                 if cls.__name__ is "Square":
                     key = ["id", "size", "x", "y"]
                 else:
@@ -98,7 +98,7 @@ class Base:
                 doc = csv.DictReader(fil, fieldnames=key)
                 doc_csv = [{key: int(value)
                             for key, value in dic.items()}
-                            for dic in doc]
+                           for dic in doc]
                 return [cls.create(**dicts) for dicts in doc_csv]
         except IOError:
             return []
