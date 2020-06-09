@@ -73,6 +73,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r1.id, 1)
         self.assertEqual(self.r2.id, 2)
         self.assertEqual(self.r3.width, 2)
+        self.assertEqual(self.r2.id, 2)
 
     def test_TypeErrors(self):
         """ TypeError cases. """
