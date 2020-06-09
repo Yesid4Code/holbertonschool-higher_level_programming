@@ -73,7 +73,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r1.id, 1)
         self.assertEqual(self.r2.id, 2)
         self.assertEqual(self.r3.width, 2)
-        self.assertEqual(self.r2.id, 2)
+        self.assertEqual(self.r4.x, 0)
 
     def test_TypeErrors(self):
         """ TypeError cases. """
@@ -82,7 +82,6 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(TypeError, Rectangle, 2.2, 2, 7, 8)
         self.assertRaises(TypeError, Rectangle, {2}, 2, 7, 8)
         self.assertRaises(TypeError, Rectangle, 2, 2, 7, (1, 2))
-        self.assertRaises(TypeError, Rectangle, None, 2, 7, 8)
         self.assertRaises(TypeError, Rectangle, 2, 2, 7, 5j)
         self.assertRaises(TypeError, Rectangle, 2, 2, 7, float("inf"))
 
