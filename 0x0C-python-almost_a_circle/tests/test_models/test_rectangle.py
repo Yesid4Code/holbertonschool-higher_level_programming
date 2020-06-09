@@ -25,7 +25,7 @@ class TestRectangle(unittest.TestCase):
         self.r0 = Rectangle(8, 12, 2, 1, 12)
         self.r1 = Rectangle(10, 11)
         self.r2 = Rectangle(12, 13, 14, 15)
-        self.r3 = Rectangle(6, 5, 2, 3, 13)
+        self.r3 = Rectangle(2, 4, 0, 3, 13)
         self.r4 = Rectangle(2, 4, 0, 0)
         # Redirect output to verify output of print dependent functions
         sys.stdout = StringIO()
@@ -39,12 +39,28 @@ class TestRectangle(unittest.TestCase):
     def test_00_id(self):
         """ Tests for id. """
         self.assertEqual(self.r0.id, 12)
-        self.assertEqual(self.r1.id, 5)
-        self.assertEqual(self.r2.id, 6)
+        self.assertEqual(self.r1.id, 2)
+        self.assertEqual(self.r2.id, 3)
+
+    def test_TypeErrors(self):
+        """ TypeError cases. """
+        self.assertRaises(TypeError, Rectangle, "a", 2, 7, 8)
+        self.assertRaises(TypeError, Rectangle, [1, 2], 2, 7, 8)
+        self.assertRaises(TypeError, Rectangle, 2.2, 2, 7, 8)
+        self.assertRaises(TypeError, Rectangle, {2}, 2, 7, 8)
+        self.assertRaises(TypeError, Rectangle, 2, 2, 7, (1, 2))
+        self.assertRaises(TypeError, Rectangle, None, 2, 7, 8)
+        self.assertRaises(TypeError, Rectangle, 2, 2, 7, 5j)
+        self.assertRaises(TypeError, Rectangle, 2, 2, 7, float("inf"))
+
+    def test__ValueErrors(self):
+        """ ValueError cases. """
+        self.assertRaises(ValueError, Rectangle, -8, 2, 7, 8)
 
     def test_04_area(self):
         """ Test the area method. """
         self.assertEqual(self.r0.area(), 96)
+
     def test_05_display_0(self):
         """
         Test display method without x and y
@@ -56,21 +72,14 @@ class TestRectangle(unittest.TestCase):
         self.r4.display()
         self.assertEqual(sys.stdout.getvalue(), r1O)
 
-    def test_06_str(self):
-        """ Test that __str__ method produces correct output. """
-        self.assertEqual(self.r0.__str__(), "[Rectangle] (12) 2/1 - 8/12")
-        self.assertEqual(self.r1.__str__(), "[Rectangle] (14) 0/0 - 10/11")
-    """
     def test_07_display_1(self):
-        ""
-        Test display method with 'x' and 'y' position. ""
-        r1O = "##\n" \
+        """ Test display method with 'x' and 'y' position. """
+        r1O = "\n\n\n##\n" \
               "##\n" \
               "##\n" \
               "##\n"
         self.r3.display()
         self.assertEqual(sys.stdout.getvalue(), r1O)
-    """
 
     def test_08_update(self):
         """ Tests that the update method uses setter with *args. """
@@ -96,4 +105,4 @@ if __name__ == "__main__":
 
 # Tests comands
 # python3 -m unittest discover tests
-# python3 -m unittest tests/test_models/test_base.py
+# python3 -m unittest tests/test_models/test_rectangle.py
