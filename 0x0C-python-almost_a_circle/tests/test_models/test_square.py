@@ -5,9 +5,16 @@ Conteins tests for Square class.
 
 
 import unittest
+import pep8
 from models.square import Square
-# here should be more imports.
+from models import square
 
+
+class TestSquareDocs(unittest.TestCase):
+    """ Check for documentation. """
+    def test_module_doc(self):
+        """ Check for module documentation. """
+        self.assertTrue(len(square.__doc__) > 0)
 
 class TestSquare(unittest.TestCase):
     """
