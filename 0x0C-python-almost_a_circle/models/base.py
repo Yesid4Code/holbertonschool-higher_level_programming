@@ -5,6 +5,7 @@ This module contains the "Base" class.
 
 
 import json
+import csv
 
 
 class Base:
@@ -69,20 +70,35 @@ class Base:
         except:
             return listt
 
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """ Serializes in CSV a list of Rectangles/Squares in Python. """
-        with open(cls.__name__ + ".csv", "w") as fil:
-            fil_csv = csv.writer(fil)
-            if cls.__name__ is "Rectangle":
-                for obj in list_objs:
-                    fil_csv.writerow([obj.id,
-                                      obj.width, obj.height,
-                                      obj.x, obj.y])
-            elif cls.__name__ is "Square":
-                for obj in list_objs:
-                    fil_csv.writerow([obj.id, obj.size, obj.x, obj.y])
-            fil_csv.writerows(list_objs)
+        with open(cls.__name__ + ".csv", "w", newline="") as fil:
+            if list_objs is None or list_objs is []:
+                fil.write("[]")
+            else:
+                if cls.__name__ is "Rectangle":
+                    key = ["id", "width", "height", "x", "y"]
+                if cls.__name__ is "Square":
+                    key = ["id", "size", "x", "y"]
+                dic = csv.DictWriter(fil, fieldnames=key)
+                list_csv = []
+                for inst in list_objs:
+                    list_csv += [dic.writerow(inst.to_dictionary())]
 
+    @classmethod
     def load_from_file_cvs(cls):
         """ Deserializes in Python a lsit of Rectangles/Squares in CSV. """
-        with
+        try:
+            with open("{}.csv".format(cls.__name__), "w", newline="") as fil:
+                if cls.__name__ is "Square":
+                    key = ["id", "size", "x", "y"]
+                else:
+                    key = ["id", "width", "height", "x", "y"]
+                doc = csv.DictReader(fil, fieldnames=key)
+                doc_csv = [{key: int(value)
+                            for key, value in dic.items()}
+                            for dic in doc]
+                return [cls.create(**dicts) for dicts in doc_csv]
+        except IOError:
+            return []
