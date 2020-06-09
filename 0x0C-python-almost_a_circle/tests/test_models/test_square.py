@@ -11,7 +11,9 @@ from models import square
 
 
 class TestSquarePep8(unittest.TestCase):
-    """Check for pep8 validation. """
+    """
+    Class containing function to test Stryle of the Square class
+    """
     def test_pep8(self):
         """ Testing square and test_square for pep8. """
         style = pep8.StyleGuide(quiet=True)
@@ -21,11 +23,13 @@ class TestSquarePep8(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warning).")
 
+
 class TestSquareDocs(unittest.TestCase):
     """ Check for documentation. """
     def test_module_doc(self):
         """ Check for module documentation. """
         self.assertTrue(len(square.__doc__) > 0)
+
 
 class TestSquare(unittest.TestCase):
     """

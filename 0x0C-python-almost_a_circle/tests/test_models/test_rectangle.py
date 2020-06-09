@@ -6,10 +6,40 @@
 
 import unittest
 import sys
+import pep8
 from io import StringIO
+from models import rectangle
 from models.base import Base
 from models.rectangle import Rectangle
-# here should be more imports like inspect, pep8, json, base,
+
+
+class TestRectanglePep8(unittest.TestCase):
+    """ checking for pep8 validation """
+    def test_pep8(self):
+        """ test rectangle and test_rectangle
+            for pep8 conformance """
+        style = pep8.StyleGuide(quiet=True)
+        file1 = 'models/rectangle.py'
+        file2 = 'tests/test_models/test_rectangle.py'
+        result = style.check_files([file1, file2])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warning).")
+
+
+class TestRecDocs(unittest.TestCase):
+    """ checking for documentation """
+    def test_module_doc(self):
+        """ checking for module documentation """
+        self.assertTrue(len(rectangle.__doc__) > 0)
+
+    def test_class_doc(self):
+        """ checking for class documentation """
+        self.assertTrue(len(Rectangle.__doc__) > 0)
+
+    def test_method_docs(self):
+        """ checking for method documentation """
+        for func in dir(Rectangle):
+            self.assertTrue(len(func.__doc__) > 0)
 
 
 class TestRectangle(unittest.TestCase):
@@ -39,8 +69,8 @@ class TestRectangle(unittest.TestCase):
     def test_00_id(self):
         """ Tests for id. """
         self.assertEqual(self.r0.id, 12)
-        self.assertEqual(self.r1.id, 2)
-        self.assertEqual(self.r2.id, 3)
+        self.assertEqual(self.r1.id, 1)
+        self.assertEqual(self.r2.id, 2)
 
     def test_TypeErrors(self):
         """ TypeError cases. """

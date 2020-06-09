@@ -6,8 +6,40 @@
 
 import unittest
 import json
+import pep8
+import json
+import sys
+import io
+from models import base
 from models.base import Base
-# here should be more imports like inspect, pep8, json, base,
+
+
+class TestPep8B(unittest.TestCase):
+    """ check for pep8 validation """
+    def test_pep8(self):
+        """ test base and test_base for pep8 conformance """
+        style = pep8.StyleGuide(quiet=True)
+        file1 = 'models/base.py'
+        file2 = 'tests/test_models/test_base.py'
+        result = style.check_files([file1, file2])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warning).")
+
+
+class TestDocsB(unittest.TestCase):
+    """ check for documentation """
+    def test_module_doc(self):
+        """ check for module documentation """
+        self.assertTrue(len(base.__doc__) > 0)
+
+    def test_class_doc(self):
+        """ check for documentation """
+        self.assertTrue(len(Base.__doc__) > 0)
+
+    def test_method_docs(self):
+        """ check for method documentation """
+        for func in dir(Base):
+            self.assertTrue(len(func.__doc__) > 0)
 
 
 class TestBase(unittest.TestCase):
