@@ -22,7 +22,10 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):  # Task 15
-        """ Method that return a JSon string. """
+        """
+        Method that return a JSon string representation of
+        List_dictionaries.
+        """
         if list_dictionaries and len(list_dictionaries) > 0:
             return json.dumps(list_dictionaries)
         return "[]"
