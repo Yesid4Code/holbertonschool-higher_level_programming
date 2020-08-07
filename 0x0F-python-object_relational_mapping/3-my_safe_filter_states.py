@@ -2,7 +2,7 @@
 """
     Script that gets all data that matches with an argument from a database.
     The argument is given in the Command Line.
-    Now the SELECT instruction is save.
+    Now the SELECT instruction is safe.
 """
 import MySQLdb
 from sys import argv
