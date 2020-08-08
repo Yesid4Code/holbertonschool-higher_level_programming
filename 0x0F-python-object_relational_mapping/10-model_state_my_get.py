@@ -27,5 +27,5 @@ if __name__ == "__main__":
     if my_query:
         print("{}".format(my_query.id))
     else:
-        print("No found")
+        print("Not found")
     session.close()
