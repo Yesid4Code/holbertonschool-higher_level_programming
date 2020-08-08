@@ -29,7 +29,5 @@ if __name__ == "__main__":
 
     rows = cur.fetchall()  # get all the rows.
     print(", ".join(row[0] for row in rows))
-    """    for row in rows:
-        print(row[0].join(", "))"""
     cur.close()  # Close all cursors.
     db.close()  # Close all databases.
