@@ -11,7 +11,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=argv[1], passwd=argv[2], db=argv[3])
     cur = db.cursor()  # Create an instance of database.
-    cur.execute("SELECT * FROM states WHERE name LIKE BANARY 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE BIXSNARY 'N%' ORDER BY id ASC")
     rows = cur.fetchall()  # get all the rows.
     for row in rows:
         print(row)
