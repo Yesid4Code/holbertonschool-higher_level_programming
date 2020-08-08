@@ -19,7 +19,10 @@ if __name__ == "__main__":
     # create a connection with the DataBase
     db = MySQLdb.connect(**db_date)
     cur = db.cursor()  # Create an instance of database.
-    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id".format(nm))
+    cur.execute("SELECT * FROM states \
+                 WHERE name LIKE BINARY '{}' \
+                 ORDER BY id".format(nm))
+    # WHERE (name='{}') != (LIKE BINARY '{}' = ("name='{}'".format(nm) +"BY id"
     rows = cur.fetchall()  # get all the rows.
     for row in rows:
         print(row)
