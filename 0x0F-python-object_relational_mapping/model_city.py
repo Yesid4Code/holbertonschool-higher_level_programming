@@ -8,6 +8,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 Base = declarative_base()
 
+
 class City(Base):
     """ Table. """
     __tablename__ = 'cities'  # The name of the table.
