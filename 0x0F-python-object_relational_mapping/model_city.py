@@ -3,14 +3,14 @@
     Link a class with a database using sqlalchemy ORM
 """
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 
 Base = declarative_base()
 
 class City(Base):
     """ Table. """
-    __tablename__ = 'city'  # The name of the table.
+    __tablename__ = 'cities'  # The name of the table.
 
     # Creating columns.
     id = Column(Integer,
@@ -22,5 +22,5 @@ class City(Base):
                   nullable=False)
 
     state_id = Column(Integer,
-                      foreignkey=('states.id'),
+                      ForeignKey('states.id'),
                       nullable=False)
