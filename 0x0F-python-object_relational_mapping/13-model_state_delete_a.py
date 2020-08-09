@@ -23,7 +23,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)  # used when engine is available.
     session = Session()  # create a Session instance.
 
-    # my_query = session.delete(State).filter(State.name.like('%a%'))
     my_query = session.query(State).filter(State.name.like('%a%')).all()
     for row in my_query:
         session.delete(row)
