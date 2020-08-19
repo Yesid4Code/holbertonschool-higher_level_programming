@@ -10,6 +10,10 @@ def find_peak(list_of_integers):
         return
     if length == 1:
         return listt[0]
+    if listt[1]<= listt[0]:
+        return listt[0]
+    if listt[-1] >= listt[-2]:
+        return listt[-1]
     pivot = length // 2
     if (pivot == 0 or listt[pivot] > listt[pivot - 1]) and\
        (pivot == length - 1 or listt[pivot] >= listt[pivot + 1]):
