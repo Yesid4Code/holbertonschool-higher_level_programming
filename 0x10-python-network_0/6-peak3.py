@@ -13,6 +13,6 @@ def find_peak(list_of_integers):
     if (pivot == 0 or listt[pivot] >= listt[pivot - 1]) and\
        (pivot == length - 1 or listt[pivot] >= listt[pivot + 1]):
         return listt[pivot]  # pivot = peak
-    if pivot != length -1 and listt[pivot + 1] > listt[pivot]:
-        return find_peak(listt[pivot + 1:])
-    return find_peak(listt[:pivot])
+    if (pivot > 0) and (listt[pivot - 1] > listt[pivot]):
+        return find_peak(listt[:pivot])
+    return find_peak(listt[pivot + 1:])
