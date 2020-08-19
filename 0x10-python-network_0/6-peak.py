@@ -1,23 +1,30 @@
 #!/usr/bin/python3
-""" . """
+"""
+Write a function that finds a peak in a list of unsorted integers.
+"""
 
 
 def find_peak(list_of_integers):
-    """ . """
-    listt = list_of_integers.copy()
-    length = len(list_of_integers)
-    if length == 0:
-        return
-    if length == 1:
-        return listt[0]
-    if listt[1]<= listt[0]:
-        return listt[0]
-    if listt[-1] >= listt[-2]:
-        return listt[-1]
-    pivot = length // 2
-    if (pivot == 0 or listt[pivot] > listt[pivot - 1]) and\
-       (pivot == length - 1 or listt[pivot] >= listt[pivot + 1]):
-        return listt[pivot]  # pivot = peak
-    if pivot > 0 and listt[pivot - 1] > listt[pivot]:
-        return find_peak(listt[:pivot])
-    return find_peak(listt[pivot + 1:])
+    """
+    Write a function that finds a peak in a list of unsorted integers.
+    """
+
+    if len(list_of_integers) == 0:
+        return None
+    if len(list_of_integers) == 1:
+        return list_of_integers[0]
+    if list_of_integers[1] <= list_of_integers[0]:
+        return list_of_integers[0]
+    if list_of_integers[-1] >= list_of_integers[-2]:
+        return list_of_integers[-1]
+
+    middle = len(list_of_integers) // 2
+    if list_of_integers[middle] >= list_of_integers[middle - 1] and \
+       list_of_integers[middle] >= list_of_integers[middle + 1]:
+        return list_of_integers[middle]
+
+    if list_of_integers[middle + 1] > list_of_integers[middle]:
+        return(find_peak(list_of_integers[middle + 1:len(list_of_integers)]))
+
+    if list_of_integers[middle - 1] > list_of_integers[middle]:
+        return(find_peak(list_of_integers[0:middle]))
