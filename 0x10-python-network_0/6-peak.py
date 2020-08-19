@@ -5,15 +5,13 @@
 def find_peak(list_of_integers):
     """ . """
     listt = list_of_integers.copy()
-    for idx in range(len(listt)):
-        if (idx - 1) >= 0 and (idx + 1) <= (len(listt) - 1):
-            if listt[idx] >= listt[idx - 1] and listt[idx] >= listt[idx + 1]:
-                return listt[idx]
-        if (idx - 1) < 0:
-            if listt[idx] >= listt[idx + 1]:
-                return listt[idx]
-        if (idx + 1) > (len(listt) - 1):
-            if listt[idx] >= listt[idx - 1]:
-                return listt[idx]
-
-    return None
+    length = len(list_of_integers)
+    if length == 0:
+        return
+    pivot = length // 2
+    if (pivot == 0 or listt[pivot] > listt[pivot - 1]) and\
+       (pivot == length - 1 or listt[pivot] >= listt[pivot + 1]):
+        return listt[pivot]  # pivot = peak
+    if pivot > 0 and listt[pivot - 1] > listt[pivot]:
+        return find_peak(listt[:pivot])
+    return find_peak(listt[pivot + 1:])
