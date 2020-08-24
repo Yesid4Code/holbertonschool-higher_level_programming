@@ -12,8 +12,8 @@ if __name__ == "__main__":
     try:
         with urlopen(argv[1]) as body:
             print(body.read().decode("utf-8"))
-    except HTTPError:
-        print("Error code: {}".format(HTTPError.code))
+    except HTTPError as err:
+        print("Error code: {}".format(err.code))
 
 
 # encode: when the result contains "str" data ==> "bytes" data
