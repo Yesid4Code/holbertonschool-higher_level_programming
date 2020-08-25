@@ -19,7 +19,7 @@ if __name__ == "__main__":
         req_dic = req.json()
         req_id = req_dic.get("id")
         req_name = req_dic.get("name")
-        if len(req_dic) == 0 or not req_id or not name:
+        if len(req_dic) == 0 or not req_id or not req_name:
             print("No result")
         else:
             print("[{}] {}".format(req_id, req_name))
