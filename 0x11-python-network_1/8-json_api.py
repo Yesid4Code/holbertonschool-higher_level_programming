@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     try:
         url = "http://0.0.0.0:5000/search_user"
-        req = post(url, data={"q":letter})
+        req = post(url, data={"q": letter})
         req_dic = req.json()
         req_id = req_dic.get("id")
         req_name = req_dic.get("name")
