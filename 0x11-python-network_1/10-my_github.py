@@ -8,7 +8,6 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    # url = "https://api.github.com/user"
-    req = get("https://api.github.com/user", auth=(argv[1], argv[2])
+    req = request.get("https://api.github.com/user", auth=(argv[1], argv[2])
     req_dic = req.json()  # decode
     print(name.get("id"))
