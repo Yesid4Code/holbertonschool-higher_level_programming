@@ -1,10 +1,10 @@
 #!/usr/bin/nodejs
 /**
- * Script that prints the first arguemtn passed.
+ * Script that prints the first arguemnt passed.
  */
-"use strict";
-if (process.argv.length > 1) {
-  console.log(process.argv[2]);
-} else {
+const arg = process.argv[2]
+if (arg === undefined) {
   console.log('No argument');
+} else {
+  console.log(process.argv[2]);
 }
