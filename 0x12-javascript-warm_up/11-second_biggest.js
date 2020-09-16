@@ -4,9 +4,9 @@
  */
 const args = process.argv;
 const length = args.length;
-if (length > 1) {
+if (length > 3) {
   args.sort();
-  console.log(args[length - 1]);
+  console.log(args[length - 2]);
 } else {
   console.log('0');
 }
