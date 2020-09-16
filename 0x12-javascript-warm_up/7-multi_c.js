@@ -3,10 +3,10 @@
 const x = parseInt(process.argv[2]);
 const i = 0;
 if (x) {
-  while (i > x) {
+  while (i < x) {
     console.log('C is fun');
     i++;
   }
 } else {
-  console.log("Missing number of occurrences");
+  console.log('Missing number of occurrences');
 }
