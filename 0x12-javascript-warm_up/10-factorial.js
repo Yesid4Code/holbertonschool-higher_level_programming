@@ -1,8 +1,8 @@
 #!/usr/bin/nodejs
 /**
- * Scrip that prints a square
+ * Scrip that compute the factorial of a number
  */
-function facto(n) {
+function facto(let n) {
   if (n) {
     return (n * (facto(n - 1)))
   } else {
