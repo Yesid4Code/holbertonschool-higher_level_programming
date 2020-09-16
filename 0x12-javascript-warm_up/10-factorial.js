@@ -4,7 +4,7 @@
  */
 function facto(n) {
   if (n) {
-    return (n * (facto(n - 1)))
+    return (n * (facto(n - 1)));
   } else {
     return (1);
   }
