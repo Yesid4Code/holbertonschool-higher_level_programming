@@ -4,7 +4,7 @@
  */
 const arg = parseInt(process.argv[2]);
 if (arg) {
-  for (const i = 0; i < arg; i++) {
+  for (let i = 0; i < arg; i++) {
     console.log('X'.repeat(arg));
   }
 } else {
