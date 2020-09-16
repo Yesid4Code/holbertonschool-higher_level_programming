@@ -2,7 +2,7 @@
 /**
  * Scrip that compute the factorial of a number
  */
-function facto(let n) {
+function facto(n) {
   if (n) {
     return (n * (facto(n - 1)))
   } else {
