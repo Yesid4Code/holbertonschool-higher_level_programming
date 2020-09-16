@@ -8,5 +8,5 @@ if (length > 3) {
   args.sort();
   console.log(args[length - 2]);
 } else {
-  console.log('0');
+  console.log(0);
 }
