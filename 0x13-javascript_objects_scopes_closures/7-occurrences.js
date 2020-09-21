@@ -2,7 +2,7 @@
 /**
  * Function that returns the number of occurrences in a list.
  */
-exports.nbOccurrences = function (list, searchElement) {
+exports.nbOccurences = function (list, searchElement) {
   let count = 0;
   let item = '';
   for (item of list) {
