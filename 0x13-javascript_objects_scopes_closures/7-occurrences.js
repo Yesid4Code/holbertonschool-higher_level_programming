@@ -11,4 +11,4 @@ exports.nbOccurrences = function (list, searchElement) {
     }
   }
   return count;
-}
+};
