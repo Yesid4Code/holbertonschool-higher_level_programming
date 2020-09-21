@@ -7,7 +7,10 @@ class Square extends require('./5-square') {
     if (c === undefined) {
       c = 'X';
     }
-    console.log(c.repeat(this.height));
+    let i;
+    for (i = 0; i < this.with; i++) {
+      console.log(c.repeat(this.height));
+    }
   }
 }
 
