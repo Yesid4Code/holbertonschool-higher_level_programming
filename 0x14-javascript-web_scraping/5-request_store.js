@@ -11,6 +11,8 @@ request.get(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
-    fs.writeFile(file, body, 'utf-8');
+    fs.writeFile(file, body, function (err) {
+      if (err) console.log(err);
+    }
   }
 });
