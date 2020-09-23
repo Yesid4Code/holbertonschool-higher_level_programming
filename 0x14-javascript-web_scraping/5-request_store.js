@@ -13,6 +13,6 @@ request.get(url, function (err, response, body) {
   } else {
     fs.writeFile(file, body, function (err) {
       if (err) console.log(err);
-    }
+    });
   }
 });
