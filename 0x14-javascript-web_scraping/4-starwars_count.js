@@ -13,12 +13,12 @@ request(url, function (error, response, body) {
     const result = JSON.parse(body).results;
     let counter = 0;
     for (const film of result) {
-      for  (const character of film.characters) {
-	if (character endsWith('/18/')) {
-	  counter++;
-	}
+      for (const character of film.characters) {
+        if (character.endsWith('/18/')) {
+          counter++;
+        }
       }
     }
-    console.log(JSON.parse(body).title);
+    console.log(counter);
   }
 });
