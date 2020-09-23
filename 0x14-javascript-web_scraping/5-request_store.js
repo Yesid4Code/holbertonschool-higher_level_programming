@@ -5,5 +5,5 @@
  */
 const fs = require('fs');
 const request = require('request');
-let url = process.argv[2];
+const url = process.argv[2];
 request(url, 'utf-8').pipe(fs.createWriteStream(process.argv[3]));
