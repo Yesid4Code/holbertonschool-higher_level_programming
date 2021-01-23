@@ -1,3 +1,10 @@
+# Higher Level Programming projects.
+In this repository you should find projects to learn the concepts of high-level languages like.
+
+* Python and JavaScript.
+* An introduction to SQL and how to use ORM with Python.
+* How to connect to an APIs and use them.
+
 ## Subdirectories.
 * 0x01-python-if_else_loops_functions
 * 0x02-python-import_modules
@@ -18,3 +25,5 @@
 * 0x11-python-network_1
 * 0x12-javascript-warm_up
 * 0x13-javascript_objects_scopes_closures
+* 0x14-javascript-web_scraping
+* 0x15-javascript-web_jquery
