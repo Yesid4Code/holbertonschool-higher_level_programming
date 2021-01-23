@@ -1,1 +1,2 @@
-Hello world2
+<!-- Project: 0x00. Python - Hello, World -->
+Knowing Python through scripts.
