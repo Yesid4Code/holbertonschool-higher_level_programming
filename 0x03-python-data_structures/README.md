@@ -1,5 +1,4 @@
 # General objectives
-* Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
 * What are lists and how to use them
 * What are the differences and similarities between strings and lists
 * What are the most common methods of lists and how to use them
