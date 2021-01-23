@@ -3,7 +3,7 @@ In this repository you should find projects to learn the concepts of high-level 
 
 * Python and JavaScript.
 * An introduction to SQL and how to use ORM with Python.
-* How to connect to an APIs and use them.
+* How to connect to an APIs and use it.
 
 ## Subdirectories.
 * 0x01-python-if_else_loops_functions
