@@ -1,6 +1,4 @@
 # 0x05-python-exceptions
-
-## About
 This project aims to acquire the concepts of:
 
 * What are exceptions and how to use them
