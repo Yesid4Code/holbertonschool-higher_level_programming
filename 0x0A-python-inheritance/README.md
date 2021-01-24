@@ -15,5 +15,3 @@ The main objective of this project is to understand the concept of inheritance f
 * Which attributes or methods are available by heritage to subclasses
 * What is the purpose of inheritance
 * What are, when and how to use isinstance, issubclass, type and super built-in functions
-
-# Tasks
